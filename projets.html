@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Projets et réalisations techniques de Lucas Noirot — travaux scolaires, académiques et professionnels en informatique et réseaux."/>
+  <title>Projets — Lucas Noirot</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="inner.css"/>
+  <style>
+    /* Filter Tabs Styling */
+    .filter-tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 3.5rem;
+      padding: 0.4rem;
+      background: rgba(124, 58, 237, 0.03);
+      border: 1px solid rgba(124, 58, 237, 0.06);
+      border-radius: var(--radius-full);
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .filter-tab {
+      background: transparent;
+      border: none;
+      color: var(--gray-600);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-tab:hover {
+      color: var(--purple-700);
+      background: rgba(124, 58, 237, 0.05);
+    }
+
+    .filter-tab.active {
+      background: var(--gradient-purple);
+      color: white;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+    }
+
+    /* Projects Grid Styling */
+    .projets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .projet-card {
+      background: white;
+      border: 1px solid var(--purple-100);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow .3s cubic-bezier(0.4, 0, 0.2, 1), border-color .3s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .projet-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--purple-200);
+    }
+
+    .projet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.25rem;
+    }
+
+    .projet-icon-wrapper {
+      width: 48px;
+      height: 48px;
+      background: rgba(124, 58, 237, 0.06);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--purple-700);
+      border: 1px solid rgba(124, 58, 237, 0.1);
+      transition: var(--transition);
+    }
+
+    .projet-card:hover .projet-icon-wrapper {
+      background: var(--gradient-purple);
+      color: white;
+      transform: rotate(3deg) scale(1.05);
+    }
+
+    .projet-badges {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3rem;
+    }
+
+    .projet-badge-cat {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .projet-badge-cat.scolaire {
+      background: rgba(124, 58, 237, 0.06);
+      color: var(--purple-700);
+      border: 1px solid rgba(124, 58, 237, 0.1);
+    }
+
+    .projet-badge-cat.pro {
+      background: rgba(59, 130, 246, 0.06);
+      color: #2563eb;
+      border: 1px solid rgba(59, 130, 246, 0.1);
+    }
+
+    .projet-badge-year {
+      font-size: 0.68rem;
+      font-weight: 700;
+      background: var(--gray-50);
+      color: var(--gray-600);
+      padding: 0.15rem 0.4rem;
+      border-radius: var(--radius-xs);
+      border: 1px solid var(--gray-100);
+    }
+
+    .projet-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+
+    .projet-card p {
+      font-size: 0.9rem;
+      color: var(--gray-600);
+      line-height: 1.6;
+      margin: 0;
+      flex-grow: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo-icon">LN</div>
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">NOIROT Lucas</span>
+        <span class="nav-brand-title">Portfolio</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"               class="nav-link">Accueil</a></li>
+      <li><a href="apropos.html"             class="nav-link">À propos</a></li>
+      <li><a href="experiences.html"         class="nav-link">Expériences</a></li>
+      <li><a href="projets.html"             class="nav-link active">Projets</a></li>
+      <li><a href="epreuve-bts.html"         class="nav-link nav-cta">Épreuve BTS</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html"       class="nav-link">🏠 Accueil</a>
+    <a href="apropos.html"     class="nav-link">👤 À propos</a>
+    <a href="experiences.html" class="nav-link">💼 Expériences</a>
+    <a href="projets.html"     class="nav-link active">🗂️ Projets</a>
+    <a href="epreuve-bts.html" class="nav-link">🎓 Épreuve BTS</a>
+  </div>
+
+  <main class="page">
+
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <span class="hero-badge">Mes Réalisations</span>
+        <h1>Mes <span>projets</span></h1>
+        <p>Découvrez l'ensemble des travaux, applications et simulations d'infrastructures que j'ai réalisés durant ma formation de BTS SIO.</p>
+      </div>
+      <div class="page-hero-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        
+        <!-- Filter Tabs -->
+        <div class="filter-tabs animate-in">
+          <button class="filter-tab active" data-filter="all">Tous</button>
+          <button class="filter-tab" data-filter="scolaire">En formation (Scolaire)</button>
+          <button class="filter-tab" data-filter="pro1">Milieu Pro (1ère année)</button>
+          <button class="filter-tab" data-filter="pro2">Milieu Pro (2ème année)</button>
+        </div>
+
+        <!-- Projects Grid (Sorted from 2026 to 2024, without numbering) -->
+        <div class="projets-grid">
+          
+          <!-- ==================== GROUP 2026 ==================== -->
+          <!-- Projet: Masters FOG Project -->
+          <div class="projet-card animate-in" data-cat="pro2">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">⚙️</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat pro">Milieu Pro</span>
+                <span class="projet-badge-year">2026</span>
+              </div>
+            </div>
+            <h3>Création & déploiement de masters via FOG Project</h3>
+            <p>Préparation d'une image système optimisée pour un service technique de l'établissement. L'enjeu était l'intégration de logiciels métiers volumineux sur des disques de faible capacité. Après nettoyage et optimisation du master pour réduire son poids, le déploiement automatisé a été réalisé sur l'ensemble des postes de la section via le serveur FOG Project.</p>
+          </div>
+
+          <!-- Projet: Windows 11 Migration -->
+          <div class="projet-card animate-in" data-cat="pro2">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🚀</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat pro">Milieu Pro</span>
+                <span class="projet-badge-year">2026</span>
+              </div>
+            </div>
+            <h3>Migration du parc informatique vers Windows 11</h3>
+            <p>Mise à jour des postes de Windows 10 vers Windows 11. Utilisation de l'utilitaire Flyby11 pour contourner les prérequis matériels (TPM 2.0, processeur) via le processus "Windows Server Setup". Cette méthode a permis d'uniformiser le système d'exploitation sur l'ensemble du parc malgré l'absence de certains composants requis par l'installeur classique.</p>
+          </div>
+
+          <!-- Projet: Docker Swarm & HAProxy -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🐳</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2026</span>
+              </div>
+            </div>
+            <h3>Haute Disponibilité avec Docker Swarm et HAProxy</h3>
+            <p>Le but était de faire en sorte qu'une application web reste toujours accessible. J'ai utilisé Docker Swarm pour répartir l'application sur plusieurs serveurs (des conteneurs). J'ai ajouté HAProxy pour diriger les utilisateurs : si un serveur tombe en panne, HAProxy renvoie automatiquement les visiteurs vers un serveur qui fonctionne, sans coupure.</p>
+          </div>
+
+          <!-- Projet: VLAN & DMZ -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🔌</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2026</span>
+              </div>
+            </div>
+            <h3>Création d'une infrastructure avec VLAN et DMZ</h3>
+            <p>Ce projet consistait à simuler l'architecture réseau d'une agence. J'ai séparé le réseau en plusieurs VLANs pour que chaque service (comptabilité, technique, etc.) soit isolé des autres. J'ai aussi créé une DMZ pour sécuriser les serveurs accessibles depuis Internet, en les isolant bien du reste du réseau interne.</p>
+          </div>
+
+          <!-- Projet: Veeam Backup -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">💾</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2026</span>
+              </div>
+            </div>
+            <h3>Mise en place d'une solution de sauvegarde avec Veeam Backup</h3>
+            <p>J'ai utilisé Veeam Backup pour mettre en place une sécurité pour les données. J'ai configuré des tâches de sauvegarde automatiques pour créer des copies des fichiers importants de l'entreprise. Cela permet d'avoir des points de restauration si jamais des données sont effacées par erreur ou en cas de problème technique sur un serveur.</p>
+          </div>
+
+
+          <!-- ==================== GROUP 2025 ==================== -->
+          <!-- Projet: pfSense Firewall HA -->
+          <div class="projet-card animate-in" data-cat="pro1">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🛡️</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat pro">Milieu Pro</span>
+                <span class="projet-badge-year">2025</span>
+              </div>
+            </div>
+            <h3>Installation et configuration d'un pare-feu pfSense en environnement isolé</h3>
+            <p>Ce projet consistait à sécuriser une partie de l'infrastructure sur Proxmox. J'ai installé pfSense et configuré des fonctionnalités de redondance (High Availability) pour garantir la continuité du réseau. La mise en place de ce pare-feu a permis de créer un "bac à sable" (sandbox) : un segment réseau isolé permettant d'effectuer des tests et des configurations sans risque pour le reste de l'infrastructure de l'entreprise.</p>
+          </div>
+
+          <!-- Projet: Docker & Portainer -->
+          <div class="projet-card animate-in" data-cat="pro1">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🚢</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat pro">Milieu Pro</span>
+                <span class="projet-badge-year">2025</span>
+              </div>
+            </div>
+            <h3>Mise en place et pratique de conteneurs Docker avec Portainer.io</h3>
+            <p>Ce projet a porté sur l'exploitation de la technologie Docker pour le déploiement de services. L'expérimentation a permis de distinguer techniquement les conteneurs Docker des conteneurs Proxmox (LXC), notamment en mettant en œuvre l'imbrication d'un moteur Docker au sein d'un conteneur Proxmox. L'interface Portainer.io a été utilisée pour gérer les stacks, les images et les volumes, facilitant le déploiement et le test d'une grande variété de solutions (serveurs web, outils cloud, services réseau).</p>
+          </div>
+
+          <!-- Projet: GNS3 simulation -->
+          <div class="projet-card animate-in" data-cat="pro1">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🕸️</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat pro">Milieu Pro</span>
+                <span class="projet-badge-year">2025</span>
+              </div>
+            </div>
+            <h3>Mise en place et exploitation du logiciel de simulation GNS3</h3>
+            <p>Afin de simuler des architectures réseaux complexes, j'ai installé GNS3 directement sur mon serveur Proxmox. Contrairement à Cisco Packet Tracer, GNS3 permet d'intégrer de réelles images de systèmes (appliances) comme pfSense ou des environnements Linux complets. Cette installation a servi de laboratoire d'apprentissage pour construire, configurer et tester des topologies réseaux réalistes avec un contrôle total sur chaque équipement simulé.</p>
+          </div>
+
+          <!-- Projet: Proxmox VE -->
+          <div class="projet-card animate-in" data-cat="pro1">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">☁️</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat pro">Milieu Pro</span>
+                <span class="projet-badge-year">2025</span>
+              </div>
+            </div>
+            <h3>Mise en place d'une infrastructure de virtualisation Proxmox VE</h3>
+            <p>Ce projet a consisté à déployer une solution de virtualisation complète, en partant du matériel jusqu'à l'exploitation logicielle. J'ai réalisé l'installation physique du serveur (montage, câblage et raccordement réseau) avant d'installer l'hyperviseur Proxmox VE. Cette installation a permis de découvrir concrètement le fonctionnement et les différences techniques entre les machines virtuelles (VM) et les conteneurs (LXC) directement sur la plateforme.</p>
+          </div>
+
+          <!-- Projet: Zabbix network supervision -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">📊</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2025</span>
+              </div>
+            </div>
+            <h3>Supervision d'une infrastructure avec Zabbix</h3>
+            <p>J'ai installé et configuré Zabbix pour surveiller le réseau de l'agence "CUB Dortmund". L'objectif était d'avoir une vue en temps réel sur l'état des serveurs et des ordinateurs. Si un équipement tombe en panne ou si le réseau devient trop lent, le système permet de le voir immédiatement pour intervenir rapidement.</p>
+          </div>
+
+          <!-- Projet: Active Directory -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">👥</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2025</span>
+              </div>
+            </div>
+            <h3>Utilisation de logiciels de gestion de parc (Active Directory)</h3>
+            <p>Dans ce projet, j'ai travaillé sur l'administration d'un serveur Windows avec Active Directory. J'ai créé des comptes utilisateurs, organisé des groupes et mis en place des stratégies (GPO). Ces règles servaient par exemple à bloquer l'accès à certains dossiers ou à définir des horaires de connexion pour les employés.</p>
+          </div>
+
+          <!-- Projet: solicluBsport -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🌐</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2025</span>
+              </div>
+            </div>
+            <h3>Création d'un site web dynamique (solicluBsport)</h3>
+            <p>Ce projet consistait à développer un site web complet pour un club de sport fictif nommé solicluBsport. L'objectif principal était de pratiquer les langages HTML, CSS et PHP, tout en apprenant à interagir avec une base de données. Pour le développement, le logiciel Laragon a été utilisé comme environnement de serveur local afin d'héberger le site et de tester les différentes fonctionnalités de gestion des membres et des activités.</p>
+          </div>
+
+          <!-- Projet: GLPI & OCS -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🏷️</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2025</span>
+              </div>
+            </div>
+            <h3>Installation et configuration de GLPI pour un inventaire automatique</h3>
+            <p>La mise en place de GLPI a permis d'automatiser la gestion du parc informatique. Après une liaison avec l'Active Directory pour l'importation des comptes, le déploiement d'une stratégie de groupe (GPO) a été configuré. Ce système déclenche un scan automatique sur chaque poste du réseau, faisant remonter les configurations matérielles et logicielles directement dans la base de données GLPI sans aucune intervention manuelle.</p>
+          </div>
+
+          <!-- Projet: FOG Deployment -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🖥️</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2025</span>
+              </div>
+            </div>
+            <h3>Déploiement de machines avec FOG</h3>
+            <p>L'utilisation de la solution FOG Project a permis d'automatiser l'installation d'ordinateurs. Le but était de préparer une machine modèle (une image Windows avec tous les logiciels déjà installés) et de l'envoyer via le réseau sur plusieurs autres postes en même temps. C'est une méthode qui permet de gagner beaucoup de temps lors de l'installation d'un parc informatique.</p>
+          </div>
+
+          <!-- Projet: Hugo Profile -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">⚡</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2025</span>
+              </div>
+            </div>
+            <h3>Création d'un portfolio avec un générateur de sites (Hugo Profile)</h3>
+            <p>Pour ce projet, j'ai utilisé Hugo sous Linux avec le modèle "Hugo Profile". Le fonctionnement est très simple : il suffit de modifier un fichier texte intuitif pour changer les informations du site. Une fois la modification enregistrée, on lance une commande dans le terminal Linux pour envoyer la mise à jour sur GitHub, ce qui publie automatiquement le site actualisé en ligne.</p>
+          </div>
+
+
+          <!-- ==================== GROUP 2024 ==================== -->
+          <!-- Projet: JS Clicker -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🎮</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2024</span>
+              </div>
+            </div>
+            <h3>Utilisation du langage JavaScript pour créer un jeu</h3>
+            <p>J'ai réalisé un jeu de type "clicker" en JavaScript. Le principe est simple : le score augmente à chaque clic et on passe des niveaux par paliers (niveau 1 à 15 clics, niveau 2 à 30 clics, etc.). Une partie connexion a été ajoutée pour que l'utilisateur puisse s'identifier, ce qui permet de sauvegarder son score et de le retrouver lors de sa prochaine partie.</p>
+          </div>
+
+          <!-- Projet: C# application -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">🔑</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2024</span>
+              </div>
+            </div>
+            <h3>Création d'une application qui génère des logins (C#)</h3>
+            <p>Ce projet consistait à développer une petite application avec une interface visuelle en C# (loginJS-adapte). Le logiciel permet de créer automatiquement un identifiant (login) à partir du nom et du prénom d'une personne. Il y a aussi une sécurité pour le mot de passe : une case change de couleur (rouge, orange ou vert) pour indiquer si le mot de passe est assez fort ou s'il manque des éléments obligatoires.</p>
+          </div>
+
+          <!-- Projet: PHP contact form -->
+          <div class="projet-card animate-in" data-cat="scolaire">
+            <div class="projet-header">
+              <div class="projet-icon-wrapper">📬</div>
+              <div class="projet-badges">
+                <span class="projet-badge-cat scolaire">Scolaire</span>
+                <span class="projet-badge-year">2024</span>
+              </div>
+            </div>
+            <h3>Utilisation de PHP pour créer un formulaire et récupérer des données</h3>
+            <p>Pour mon premier portfolio en HTML et CSS, j'ai ajouté une fiche de contact en PHP. L'idée était de permettre aux gens de laisser leur nom, prénom, adresse et un commentaire. Le code PHP permet de récupérer ces informations pour pouvoir recontacter les personnes plus tard. Ce projet a servi à comprendre comment lier un site avec une base de données pour gérer des messages.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Lucas <span>Noirot</span></div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="experiences.html">Expériences</a>
+        <a href="projets.html">Projets</a>
+        <a href="epreuve-bts.html">Épreuve BTS</a>
+      </div>
+      <p class="footer-copy">© 2025 — Lucas Noirot | BTS SIO SISR</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Tab filtering system
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('.filter-tab');
+      const cards = document.querySelectorAll('.projet-card');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Toggle active classes
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          const filter = tab.getAttribute('data-filter');
+
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-cat') === filter) {
+              card.style.display = 'flex';
+              // Add slight delay for animation trigger
+              setTimeout(() => {
+                card.classList.add('visible');
+              }, 50);
+            } else {
+              card.style.display = 'none';
+              card.classList.remove('visible');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

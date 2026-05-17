@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Expériences professionnelles de Lucas Noirot — stages en informatique, réseaux et administration système."/>
+  <title>Expériences — Lucas Noirot</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="inner.css"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo-icon">LN</div>
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">NOIROT Lucas</span>
+        <span class="nav-brand-title">Portfolio</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"       class="nav-link">Accueil</a></li>
+      <li><a href="apropos.html"     class="nav-link">À propos</a></li>
+      <li><a href="experiences.html" class="nav-link active">Expériences</a></li>
+      <li><a href="projets.html"     class="nav-link">Projets</a></li>
+      <li><a href="epreuve-bts.html" class="nav-link nav-cta">Épreuve BTS</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html"       class="nav-link">🏠 Accueil</a>
+    <a href="apropos.html"     class="nav-link">👤 À propos</a>
+    <a href="experiences.html" class="nav-link active">💼 Expériences</a>
+    <a href="projets.html"     class="nav-link">🗂️ Projets</a>
+    <a href="epreuve-bts.html" class="nav-link">🎓 Épreuve BTS</a>
+  </div>
+
+  <main class="page">
+
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <h1>Expériences <span>professionnelles</span></h1>
+        <p>Stages et missions qui m'ont permis de mettre en pratique mes compétences en entreprise.</p>
+      </div>
+      <div class="page-hero-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="exp-list">
+
+          <!-- 11 — Lycée Charles de Gaulle 2026 -->
+          <div class="exp-card animate-in">
+            <div class="exp-year-badge">
+              <span class="exp-year">2026</span>
+              <span class="exp-year-label">5 semaines</span>
+            </div>
+            <div class="exp-info">
+              <h3>Lycée Charles de Gaulle</h3>
+              <p>Service informatique — Migration Windows 11 & maintenance réseau</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-stage">Stage BTS</span>
+              <button class="exp-btn" onclick="openModal('modal-11')">Détails →</button>
+            </div>
+          </div>
+
+          <!-- 10 — Lycée Eugène De Comble 2025 -->
+          <div class="exp-card animate-in delay-1">
+            <div class="exp-year-badge">
+              <span class="exp-year">2025</span>
+              <span class="exp-year-label">5 semaines</span>
+            </div>
+            <div class="exp-info">
+              <h3>Lycée Eugène De Comble</h3>
+              <p>Service informatique — Proxmox, Docker & cybersécurité</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-stage">Stage BTS</span>
+              <button class="exp-btn" onclick="openModal('modal-10')">Détails →</button>
+            </div>
+          </div>
+
+          <!-- 9 — La Mie Câline 2025 -->
+          <div class="exp-card animate-in delay-2">
+            <div class="exp-year-badge">
+              <span class="exp-year">2025</span>
+              <span class="exp-year-label">4 semaines</span>
+            </div>
+            <div class="exp-info">
+              <h3>La Mie Câline, Chaumont</h3>
+              <p>Vendeur préparateur — Vente, conseil & encaissement</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-pro">Expérience pro</span>
+              <button class="exp-btn" onclick="openModal('modal-9')">Détails →</button>
+            </div>
+          </div>
+
+          <!-- 8 — Mairie de Langres 2024 -->
+          <div class="exp-card animate-in delay-3">
+            <div class="exp-year-badge">
+              <span class="exp-year">2024</span>
+              <span class="exp-year-label">4 semaines</span>
+            </div>
+            <div class="exp-info">
+              <h3>Mairie de Langres</h3>
+              <p>Service informatique — Migration GLPI 9 → GLPI 10</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-stage">Stage</span>
+              <button class="exp-btn" onclick="openModal('modal-8')">Détails →</button>
+            </div>
+          </div>
+
+          <!-- 7 — Mairie de Langres 2023 -->
+          <div class="exp-card animate-in delay-4">
+            <div class="exp-year-badge">
+              <span class="exp-year">2023</span>
+              <span class="exp-year-label">4 semaines</span>
+            </div>
+            <div class="exp-info">
+              <h3>Mairie de Langres</h3>
+              <p>Service informatique — Supervision réseau & maintenance multi-sites</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-stage">Stage</span>
+              <button class="exp-btn" onclick="openModal('modal-7')">Détails →</button>
+            </div>
+          </div>
+
+          <!-- 6 — Lycée Charles de Gaulle 2023 -->
+          <div class="exp-card animate-in">
+            <div class="exp-year-badge">
+              <span class="exp-year">2023</span>
+              <span class="exp-year-label">4 semaines</span>
+            </div>
+            <div class="exp-info">
+              <h3>Lycée Charles de Gaulle</h3>
+              <p>Service informatique — Maintenance matériel & support professeurs</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-stage">Stage</span>
+              <button class="exp-btn" onclick="openModal('modal-6')">Détails →</button>
+            </div>
+          </div>
+
+          <!-- 5 — ACCES X DFM 2023 -->
+          <div class="exp-card animate-in delay-1">
+            <div class="exp-year-badge">
+              <span class="exp-year">2023</span>
+              <span class="exp-year-label">4 semaines</span>
+            </div>
+            <div class="exp-info">
+              <h3>ACCES X DFM</h3>
+              <p>Maintenance informatique dans plusieurs collèges — Déploiement & dépannage</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-stage">Stage</span>
+              <button class="exp-btn" onclick="openModal('modal-5')">Détails →</button>
+            </div>
+          </div>
+
+          <!-- 4 — Mairie de Langres 2022 -->
+          <div class="exp-card animate-in delay-2">
+            <div class="exp-year-badge">
+              <span class="exp-year">2022</span>
+              <span class="exp-year-label">2 semaines</span>
+            </div>
+            <div class="exp-info">
+              <h3>Mairie de Langres</h3>
+              <p>Service informatique — Installation postes & administration réseau</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-stage">Stage</span>
+              <button class="exp-btn" onclick="openModal('modal-4')">Détails →</button>
+            </div>
+          </div>
+
+          <!-- 3 — C'SAM 2022 -->
+          <div class="exp-card animate-in delay-3">
+            <div class="exp-year-badge">
+              <span class="exp-year">2022</span>
+              <span class="exp-year-label">2 semaines</span>
+            </div>
+            <div class="exp-info">
+              <h3>C'SAM — Agglomération de Chaumont</h3>
+              <p>Service informatique — Diagnostic & support utilisateurs</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-stage">Stage</span>
+              <button class="exp-btn" onclick="openModal('modal-3')">Détails →</button>
+            </div>
+          </div>
+
+          <!-- 2 — 3D CPS 2022 -->
+          <div class="exp-card animate-in delay-4">
+            <div class="exp-year-badge">
+              <span class="exp-year">2022</span>
+              <span class="exp-year-label">2 semaines</span>
+            </div>
+            <div class="exp-info">
+              <h3>3D CPS</h3>
+              <p>Stage de conception 3D — Modélisation & impression 3D</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-stage">Stage</span>
+              <button class="exp-btn" onclick="openModal('modal-2')">Détails →</button>
+            </div>
+          </div>
+
+          <!-- 1 — Intermarché 2020 -->
+          <div class="exp-card animate-in">
+            <div class="exp-year-badge">
+              <span class="exp-year">2020</span>
+              <span class="exp-year-label">1 semaine</span>
+            </div>
+            <div class="exp-info">
+              <h3>Intermarché</h3>
+              <p>Stage de découverte de 3ème — Mise en rayon & accueil clients</p>
+            </div>
+            <div class="exp-tag-col">
+              <span class="tag tag-decouverte">Découverte 3ème</span>
+              <button class="exp-btn" onclick="openModal('modal-1')">Détails →</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════ MODALS ══════════════ -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeAllModals()">
+
+    <!-- Modal 1 — Intermarché -->
+    <div class="modal" id="modal-1" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🛒 Découverte 3ème — 2020 · 1 semaine</div>
+      <h2>Intermarché</h2>
+      <img src="intermarché.png" alt="Intermarché" class="modal-photo"/>
+      <p>Stage de découverte de 3ème au sein du supermarché Intermarché.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>S'occuper de la mise en rayon et du rangement des produits</li>
+        <li>Accueillir les clients et les aider dans le magasin</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Être plus à l'aise pour parler avec les gens et les conseiller</li>
+        <li>Découvrir comment fonctionne une entreprise et le monde du travail</li>
+      </ul>
+    </div>
+
+    <!-- Modal 2 — 3D CPS -->
+    <div class="modal" id="modal-2" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🖨️ Stage — 2022 · 2 semaines</div>
+      <h2>3D CPS — Stage de conception 3D</h2>
+      <img src="3d-cps.png" alt="3D CPS" class="modal-photo"/>
+      <p>Stage de conception et impression 3D sur logiciel professionnel.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>Concevoir et réaliser des pièces sur mesure</li>
+        <li>Créer ses propres objets originaux sur un logiciel professionnel</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Savoir utiliser les bases d'un logiciel de conception (Fusion)</li>
+        <li>Connaître les premiers pas de l'impression 3D (charger le fil, lancer l'impression)</li>
+      </ul>
+    </div>
+
+    <!-- Modal 3 — C'SAM -->
+    <div class="modal" id="modal-3" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🖥️ Stage — 2022 · 2 semaines</div>
+      <h2>C'SAM — Agglomération de Chaumont</h2>
+      <img src="C'sam.png" alt="C'SAM" class="modal-photo"/>
+      <p>Service informatique de l'agglomération de Chaumont — support et dépannage utilisateurs.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>Assister les utilisateurs dans le diagnostic et la résolution de leurs problèmes informatiques</li>
+        <li>Réaliser des dépannages de premier niveau sur les postes de travail (logiciel et matériel)</li>
+        <li>S'immerger dans le quotidien d'un service de maintenance pour comprendre le fonctionnement global d'un parc informatique</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Savoir interroger un utilisateur pour identifier l'origine d'une panne (sens de l'écoute)</li>
+        <li>Apprendre les bases du dépannage et de l'investigation système</li>
+        <li>Capacité à s'adapter à un environnement professionnel structuré</li>
+      </ul>
+    </div>
+
+    <!-- Modal 4 — Mairie Langres 2022 -->
+    <div class="modal" id="modal-4" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🏛️ Stage — 2022 · 2 semaines</div>
+      <h2>Mairie de Langres — Service Informatique</h2>
+      <img src="mairie-langre.png" alt="Mairie de Langres" class="modal-photo"/>
+      <p>Stage au sein du service informatique municipal — installation et administration réseau.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>Installer et configurer des postes de travail sur différents sites (bureaux, écoles)</li>
+        <li>Accompagner les techniciens lors d'interventions techniques sur le terrain et aider au diagnostic auprès des utilisateurs</li>
+        <li>Découvrir l'administration globale d'un parc : serveurs, sécurité réseau (pare-feu, switches) et téléphonie</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Identifier les composants internes d'un ordinateur</li>
+        <li>Savoir recueillir les informations nécessaires auprès de l'utilisateur pour comprendre une panne</li>
+        <li>Préparer et installer du matériel informatique adapté aux besoins spécifiques d'un service</li>
+      </ul>
+    </div>
+
+    <!-- Modal 5 — ACCES X DFM 2023 -->
+    <div class="modal" id="modal-5" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🏫 Stage — 2023 · 4 semaines</div>
+      <h2>ACCES X DFM</h2>
+      <img src="acces.png" alt="ACCES X DFM" class="modal-photo"/>
+      <p>Maintenance informatique itinérante dans plusieurs collèges de la région.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>S'occuper de la maintenance informatique dans plusieurs collèges différents</li>
+        <li>Réparer les pannes et installer de nouveaux équipements informatiques (déploiement)</li>
+        <li>Rester disponible sur place pour aider le personnel et les professeurs si un problème survient</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Savoir organiser ses interventions en suivant une liste de tâches</li>
+        <li>Réaliser des dépannages de base et l'installation de matériel informatique</li>
+        <li>S'adapter rapidement à différents lieux de travail</li>
+      </ul>
+    </div>
+
+    <!-- Modal 6 — Lycée Charles de Gaulle 2023 -->
+    <div class="modal" id="modal-6" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🏫 Stage — 2023 · 4 semaines</div>
+      <h2>Lycée Charles de Gaulle</h2>
+      <img src="lycee_charles_de_gaulle.png" alt="Lycée Charles de Gaulle" class="modal-photo"/>
+      <p>Service informatique du lycée — maintenance du parc et support aux professeurs.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>Assurer le bon fonctionnement du matériel informatique au sein du lycée</li>
+        <li>Installer et configurer de nouveaux postes de travail</li>
+        <li>Échanger avec les professeurs pour identifier leurs problèmes techniques et y répondre</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Savoir diagnostiquer et résoudre des pannes informatiques courantes</li>
+        <li>Mettre en service du matériel informatique prêt à l'emploi</li>
+        <li>Comprendre et analyser les besoins d'un utilisateur pour lui apporter une solution</li>
+      </ul>
+    </div>
+
+    <!-- Modal 7 — Mairie Langres 2023 -->
+    <div class="modal" id="modal-7" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🏛️ Stage — 2023 · 4 semaines</div>
+      <h2>Mairie de Langres — Service Informatique</h2>
+      <img src="mairie-langre.png" alt="Mairie de Langres" class="modal-photo"/>
+      <p>Maintenance multi-sites et exploration des outils de supervision réseau.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>Réaliser des interventions de maintenance et de dépannage sur les différents sites de la mairie</li>
+        <li>Faire des recherches sur les outils de surveillance (supervision) du parc informatique</li>
+        <li>Installer et explorer un logiciel de surveillance pour découvrir son fonctionnement et ses menus</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Savoir chercher des informations sur un nouveau type de logiciel</li>
+        <li>Comprendre à quoi sert la surveillance d'un réseau informatique</li>
+        <li>Apprendre à se repérer dans une interface technique inconnue</li>
+      </ul>
+    </div>
+
+    <!-- Modal 8 — Mairie Langres 2024 -->
+    <div class="modal" id="modal-8" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🏛️ Stage BTS — 2024 · 4 semaines</div>
+      <h2>Mairie de Langres — Service Informatique</h2>
+      <img src="mairie-langre.png" alt="Mairie de Langres" class="modal-photo"/>
+      <p>Migration du système de ticketing GLPI 9 vers GLPI 10 avec rédaction de procédure.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>Mettre à jour le service de ticketing (passage de GLPI 9 vers GLPI 10)</li>
+        <li>Rédiger une procédure technique d'installation précise et reproductible</li>
+        <li>Adapter le logiciel aux besoins de la mairie</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Piloter un projet de migration logicielle de A à Z</li>
+        <li>Produire une documentation technique fiable pour sécuriser l'installation</li>
+        <li>Configurer un outil de gestion de parc et ses interconnexions réseau</li>
+      </ul>
+    </div>
+
+    <!-- Modal 9 — La Mie Câline 2025 -->
+    <div class="modal" id="modal-9" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🥐 Expérience pro — 2025 · 4 semaines</div>
+      <h2>La Mie Câline, Chaumont</h2>
+      <img src="mie-caline.png" alt="La Mie Câline" class="modal-photo"/>
+      <p>Vendeur préparateur (3 CDD) — Juillet (2 sem.), Août (1 sem.) et Octobre (1 sem.) 2025.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>Accueillir les clients, les conseiller, réaliser la vente et proposer les nouveautés</li>
+        <li>Gérer l'encaissement</li>
+        <li>Préparer les commandes et nettoyer son poste de travail</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Mieux communiquer avec les clients et être plus à l'aise pour parler</li>
+        <li>Apprendre à travailler en équipe</li>
+        <li>Être ponctuel et respecter les horaires de travail</li>
+        <li>Savoir organiser son travail et gérer les priorités</li>
+      </ul>
+    </div>
+
+    <!-- Modal 10 — Lycée Eugène De Comble 2025 -->
+    <div class="modal" id="modal-10" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🖥️ Stage BTS — 2025 · 5 semaines</div>
+      <h2>Lycée Eugène De Comble</h2>
+      <img src="eugene-decomble.png" alt="Lycée Eugène De Comble" class="modal-photo"/>
+      <p>Stage BTS axé sur la virtualisation avec Proxmox, la conteneurisation Docker et les bases de la cybersécurité.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>Installer et configurer un hyperviseur Proxmox pour gérer des machines virtuelles</li>
+        <li>Apprendre à utiliser Docker pour installer et mettre en service différents outils informatiques</li>
+        <li>S'initier aux bases de la cybersécurité (brute force, injection SQL) : comprendre comment on attaque un système pour savoir comment le protéger</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Développer une méthode de travail rigoureuse : analyser avant d'agir et ne pas se précipiter</li>
+        <li>Faire preuve d'autonomie : chercher les solutions par soi-même pour atteindre l'objectif fixé</li>
+        <li>Maîtriser les outils de virtualisation et de conteneurisation (Proxmox et Docker)</li>
+      </ul>
+    </div>
+
+    <!-- Modal 11 — Lycée Charles de Gaulle 2026 -->
+    <div class="modal" id="modal-11" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAllModals()">✕</button>
+      <div class="modal-badge">🏫 Stage BTS — 2026 · 5 semaines</div>
+      <h2>Lycée Charles de Gaulle</h2>
+      <img src="lycee_charles_de_gaulle.png" alt="Lycée Charles de Gaulle" class="modal-photo"/>
+      <p>Stage BTS axé sur la migration du parc informatique vers Windows 11 et la maintenance réseau.</p>
+      <div class="modal-section-title">📋 Missions</div>
+      <ul class="modal-missions">
+        <li>Migration du parc informatique vers Windows 11 (avec recours à Flyby11 en cas de blocage matériel)</li>
+        <li>Dépannage réseau et maintenance du matériel</li>
+        <li>Initiation à l'environnement macOS</li>
+      </ul>
+      <div class="modal-section-title">🎯 Compétences acquises</div>
+      <ul class="modal-missions">
+        <li>Prendre conscience de l'importance de maintenir un système à jour pour garantir sa sécurité</li>
+        <li>Être opérationnel et autonome immédiatement dans un environnement connu</li>
+        <li>S'adapter à différents types de systèmes (Windows et Mac)</li>
+      </ul>
+    </div>
+
+  </div><!-- /modal-overlay -->
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Lucas <span>Noirot</span></div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="experiences.html">Expériences</a>
+        <a href="projets.html">Projets</a>
+        <a href="epreuve-bts.html">Épreuve BTS</a>
+      </div>
+      <p class="footer-copy">© 2025 — Lucas Noirot | BTS SIO SISR</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

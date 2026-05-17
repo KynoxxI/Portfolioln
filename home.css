@@ -1,0 +1,170 @@
+/* ─── HOME SPECIFIC ──────────────────────────────────────────── */
+
+/* Blobs */
+.hero-blobs { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: .15;
+}
+.blob-1 {
+  width: 500px; height: 500px;
+  background: var(--purple-400);
+  top: -150px; right: -100px;
+  animation: float1 8s ease-in-out infinite;
+}
+.blob-2 {
+  width: 350px; height: 350px;
+  background: var(--purple-600);
+  bottom: -80px; left: -80px;
+  animation: float2 10s ease-in-out infinite;
+}
+.blob-3 {
+  width: 250px; height: 250px;
+  background: var(--purple-300);
+  top: 40%; left: 40%;
+  animation: float1 12s ease-in-out infinite reverse;
+}
+@keyframes float1 { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-30px) scale(1.05); } }
+@keyframes float2 { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(20px) scale(.95); } }
+
+/* Stats */
+.section-stats { padding-top: 3rem; padding-bottom: 3rem; }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+}
+.stat-card {
+  background: white;
+  border: 1px solid rgba(124,58,237,.1);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient-purple);
+}
+.stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.stat-number {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  background: var(--gradient-purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: .4rem;
+}
+.stat-label {
+  font-size: .8rem;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+/* Rubriques */
+.rubriques-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+}
+.rubrique-card {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  background: white;
+  border: 1px solid rgba(124,58,237,.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.rubrique-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--purple-400);
+}
+.rubrique-card:hover .rubrique-link { color: var(--purple-600); gap: .75rem; }
+.rubrique-icon {
+  width: 52px; height: 52px;
+  background: var(--purple-50);
+  border: 1px solid var(--purple-200);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+.rubrique-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+.rubrique-card p {
+  font-size: .875rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+  flex: 1;
+}
+.rubrique-link {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--purple-500);
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  transition: var(--transition);
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  background: white;
+  border: 1px solid rgba(124,58,237,.08);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.skill-item:hover {
+  background: var(--purple-50);
+  border-color: var(--purple-300);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.skill-icon {
+  font-size: 1.75rem;
+  width: 52px; height: 52px;
+  background: var(--purple-100);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-name {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}

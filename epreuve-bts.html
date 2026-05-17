@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Épreuves et réalisations du BTS SIO SISR de Lucas Noirot — fiches E5, projets personnels E6 et attestations."/>
+  <title>Épreuve BTS SIO — Lucas Noirot</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="inner.css"/>
+  <style>
+    /* Custom additional styles for Epreuves BTS */
+    .epreuve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    
+    .epreuve-card {
+      background: white;
+      border: 1px solid var(--purple-100);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .epreuve-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--purple-200);
+    }
+    
+    .epreuve-card-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: var(--purple-50);
+      color: var(--purple-700);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--purple-100);
+    }
+    
+    .epreuve-card h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--gray-900);
+      padding-right: 4rem;
+    }
+    
+    .epreuve-card p {
+      color: var(--gray-600);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .synthese-box {
+      background: linear-gradient(135deg, rgba(124,58,237,0.04) 0%, rgba(139,92,246,0.08) 100%);
+      border: 1px dashed var(--purple-300);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 3.5rem;
+      transition: var(--transition);
+    }
+
+    .synthese-box:hover {
+      border-color: var(--purple-500);
+      background: linear-gradient(135deg, rgba(124,58,237,0.06) 0%, rgba(139,92,246,0.1) 100%);
+    }
+
+    .synthese-info h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+      color: var(--purple-900);
+    }
+
+    .synthese-info p {
+      color: var(--gray-600);
+      font-size: 0.92rem;
+      margin: 0;
+    }
+
+    /* Interactive Sheet Previews (E5) */
+    .sheets-preview-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .sheet-thumb {
+      position: relative;
+      border: 1px solid var(--purple-100);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      height: 140px;
+      background: var(--gray-50);
+      transition: var(--transition);
+    }
+
+    .sheet-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: var(--transition);
+    }
+
+    .sheet-thumb:hover img {
+      transform: scale(1.04);
+    }
+
+    .sheet-thumb::before {
+      content: '🔍 Agrandir';
+      position: absolute;
+      inset: 0;
+      background: rgba(124, 58, 237, 0.4);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 1;
+    }
+
+    .sheet-thumb:hover::before {
+      opacity: 1;
+    }
+
+    .sheet-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.3rem;
+      z-index: 2;
+    }
+
+    /* Architecture / Schema display */
+    .arch-preview {
+      width: 100%;
+      height: 250px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--purple-100);
+      cursor: pointer;
+      position: relative;
+      background: #f9f7ff;
+    }
+
+    .arch-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      transition: var(--transition);
+      background: #f9f7ff;
+    }
+
+    .arch-preview:hover img {
+      transform: scale(1.02);
+    }
+
+    .arch-preview::before {
+      content: '🔍 Agrandir le schéma';
+      position: absolute;
+      inset: 0;
+      background: rgba(124, 58, 237, 0.4);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 1;
+    }
+
+    .arch-preview:hover::before {
+      opacity: 1;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tech-tag {
+      background: rgba(124,58,237,0.06);
+      color: var(--purple-800);
+      border: 1px solid rgba(124,58,237,0.12);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .action-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: auto;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--purple-50);
+      color: var(--purple-700);
+      border: 1px solid var(--purple-200);
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .action-btn:hover {
+      background: var(--purple-600);
+      color: white;
+      border-color: var(--purple-600);
+      box-shadow: 0 4px 12px rgba(124,58,237,0.25);
+    }
+
+    /* Lightbox Modal CSS */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.95);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.75rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .lightbox-close:hover {
+      transform: scale(1.1);
+      color: var(--purple-300);
+    }
+
+    .lightbox-caption {
+      color: rgba(255,255,255,0.85);
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo-icon">LN</div>
+      <div class="nav-brand-text">
+        <span class="nav-brand-name">NOIROT Lucas</span>
+        <span class="nav-brand-title">Portfolio</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html"       class="nav-link">Accueil</a></li>
+      <li><a href="apropos.html"     class="nav-link">À propos</a></li>
+      <li><a href="experiences.html" class="nav-link">Expériences</a></li>
+      <li><a href="projets.html"     class="nav-link">Projets</a></li>
+      <li><a href="epreuve-bts.html" class="nav-link active nav-cta">Épreuve BTS</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html"       class="nav-link">🏠 Accueil</a>
+    <a href="apropos.html"     class="nav-link">👤 À propos</a>
+    <a href="experiences.html" class="nav-link">💼 Expériences</a>
+    <a href="projets.html"     class="nav-link">🗂️ Projets</a>
+    <a href="epreuve-bts.html" class="nav-link active">🎓 Épreuve BTS</a>
+  </div>
+
+  <main class="page">
+
+    <section class="page-hero">
+      <div class="page-hero-content">
+        <span class="hero-badge">Session 2026</span>
+        <h1>Épreuves <span>BTS SIO (SISR)</span></h1>
+        <p>Travaux pratiques, fiches descriptives officielles et documents professionnels réalisés durant mes deux années de formation.</p>
+      </div>
+      <div class="page-hero-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- SECTION E5 -->
+        <div class="section-header animate-in">
+          <span class="section-label">Épreuve E5</span>
+          <h2 class="section-title">E5 – Réalisations professionnelles</h2>
+          <div class="divider" style="margin: 0.5rem auto 1.5rem;"></div>
+          <p class="section-desc" style="max-width: 750px;">
+            Cette section regroupe l'ensemble des projets que j'ai menés durant tout mon cursus de BTS. Ces travaux témoignent de ma progression et de la diversité des compétences techniques acquises.
+          </p>
+        </div>
+
+        <!-- Tableau de Synthèse Callout -->
+        <div class="synthese-box animate-in">
+          <div style="font-size: 3rem; margin-bottom: 0.5rem; filter: drop-shadow(0 4px 8px rgba(124,58,237,0.15));">📂</div>
+          <div class="synthese-info">
+            <h3 style="font-size: 1.45rem; font-weight: 800; color: var(--purple-900); margin-bottom: 0.5rem;">Tableau de synthèse</h3>
+            <p style="font-size: 0.95rem; color: var(--gray-600); line-height: 1.6; max-width: 500px; margin: 0 auto 1.5rem;">
+              Le document officiel récapitulant toutes les compétences et réalisations validées au cours de mes deux années de formation.
+            </p>
+          </div>
+          <a href="#" class="btn btn-primary" style="padding: 0.8rem 2.2rem; font-weight: 600; border-radius: var(--radius-md); box-shadow: 0 8px 16px rgba(124,58,237,0.2);" onclick="event.preventDefault(); openLightbox('documents/Tableau_de_synthese_2025_Noirot.pdf', 'Tableau de Synthèse', 'pdf')">
+            Accéder au Tableau de Synthèse
+          </a>
+        </div>
+
+        <div style="margin-top: 4rem;"></div>
+
+        <!-- SECTION E6 -->
+        <div class="section-header animate-in">
+          <span class="section-label">Épreuve E6</span>
+          <h2 class="section-title">E6 – Projets personnels</h2>
+          <div class="divider" style="margin: 0.5rem auto 1.5rem;"></div>
+          <p class="section-desc" style="max-width: 780px;">
+            Dans le cadre de mon apprentissage, j'ai réalisé en autonomie deux projets personnels majeurs. Ils illustrent ma capacité à concevoir et mettre en œuvre des solutions techniques répondant à des problématiques de haute disponibilité et de déploiement.
+          </p>
+        </div>
+
+        <div class="epreuve-grid" style="max-width: 1000px; margin: 1.5rem auto 0;">
+          
+          <!-- E6 - Projet 1 -->
+          <div class="epreuve-card animate-in">
+            <span class="epreuve-card-badge">Projet E6 - 1</span>
+            <h3>1. Mise en place d'un Intranet en Haute Disponibilité</h3>
+            <p>
+              Réalisation d'une infrastructure pour un site intranet statique garantissant une continuité de service maximale.
+            </p>
+            
+            <div class="arch-preview" onclick="openLightbox('e6_realisation_detail_1.png', 'Architecture technique du site Intranet Haute Disponibilité')">
+              <img src="e6_realisation_detail_1.png" alt="Schéma Architecture HA"/>
+            </div>
+
+            <div style="font-size: 0.9rem; color: var(--gray-700); margin-bottom: 1.5rem; line-height: 1.6;">
+              <strong style="color: var(--purple-900)">Technologie :</strong> Utilisation de Docker pour la conteneurisation.<br/>
+              <strong style="color: var(--purple-900)">Architecture :</strong> Mise en place d'une redondance sur trois sites tournant en boucle avec un HAProxy pour la répartition de charge.<br/>
+              <strong style="color: var(--purple-900)">Gestion des données :</strong> Chaque machine dispose de son propre dossier de stockage. Les modifications effectuées en local sont automatiquement répercutées sur les trois instances du site.
+            </div>
+
+            <div class="action-links">
+              <a href="#" class="action-btn" onclick="event.preventDefault(); openLightbox('documents/E6_Noirot_Intranet.pdf', 'Dossier E6 - Intranet CUB Dortmund en Haute Disponibilité', 'pdf')">📂 Accéder au Dossier E6 - 1</a>
+              <a href="#" class="action-btn" onclick="event.preventDefault(); openLightbox('documents/Procedure_HAProxy_Noirot.pdf', 'Procédure HAProxy - Installation & Configuration', 'pdf')">📂 Accéder a la procedure</a>
+            </div>
+          </div>
+
+          <!-- E6 - Projet 2 -->
+          <div class="epreuve-card animate-in delay-1">
+            <span class="epreuve-card-badge">Projet E6 - 2</span>
+            <h3>2. Déploiement d'images via Serveur FOG</h3>
+            <p>
+              Conception d'une solution automatisée pour la gestion d'un parc informatique.
+            </p>
+            
+            <div class="arch-preview" onclick="openLightbox('e6_realisation_detail_3.png', 'Schéma de déploiement d\'images via Serveur FOG')">
+              <img src="e6_realisation_detail_3.png" alt="Schéma FOG"/>
+            </div>
+
+            <div style="font-size: 0.9rem; color: var(--gray-700); margin-bottom: 2.25rem; line-height: 1.6;">
+              <strong style="color: var(--purple-900)">Objectif :</strong> Déploiement rapide d'images systèmes pour une salle de formation.<br/>
+              <strong style="color: var(--purple-900)">Solution :</strong> Installation et paramétrage d'un serveur FOG pour automatiser le clonage des postes.
+            </div>
+
+            <div class="action-links">
+              <a href="#" class="action-btn" onclick="event.preventDefault(); openLightbox('documents/E6_Noirot_FOG.pdf', 'Dossier E6 - Déploiement d\'images via Serveur FOG', 'pdf')">📂 Accéder au Dossier E6 - 2</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 5rem;"></div>
+
+        <!-- SECTION STAGES -->
+        <div class="section-header animate-in">
+          <span class="section-label">Stages</span>
+          <h2 class="section-title">Attestations de stage</h2>
+          <div class="divider" style="margin: 0.5rem auto 1.5rem;"></div>
+          <p class="section-desc">
+            Périodes d'immersion professionnelle en entreprise :
+          </p>
+        </div>
+
+        <div class="epreuve-grid" style="max-width: 780px; margin: 1.5rem auto 0; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          
+          <!-- Stage 1ère année -->
+          <div class="epreuve-card animate-in" style="text-align: center; align-items: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏢</div>
+            <h3>Stage de 1ère année</h3>
+            <p>Période d'immersion pratique en infrastructure système et support.</p>
+            <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center; margin-top: auto;" onclick="event.preventDefault(); alert('Affichage de l\'attestation de stage de 1ère année…')">
+              📄 Voir l'attestation
+            </a>
+          </div>
+
+          <!-- Stage 2ème année -->
+          <div class="epreuve-card animate-in delay-1" style="text-align: center; align-items: center;">
+            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚙️</div>
+            <h3>Stage de 2ème année</h3>
+            <p>Spécialisation en administration de parcs, serveurs et sécurité réseau.</p>
+            <a href="#" class="btn btn-outline" style="width: 100%; justify-content: center; margin-top: auto;" onclick="event.preventDefault(); alert('Affichage de l\'attestation de stage de 2ème année…')">
+              📄 Voir l'attestation
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+      
+      <!-- Preview Image (E5 Sheets) -->
+      <img src="" alt="Agrandissement" class="lightbox-img" id="lightbox-img" style="display: none;"/>
+      
+      <!-- Preview PDF (E6 Docs & Synth Table) -->
+      <iframe src="" class="lightbox-iframe" id="lightbox-iframe" style="display: none; width: 80vw; height: 80vh; border: none; border-radius: var(--radius-md); background: white;"></iframe>
+      
+      <div class="lightbox-caption" id="lightbox-caption">Description de l'image</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Lucas <span>Noirot</span></div>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="experiences.html">Expériences</a>
+        <a href="projets.html">Projets</a>
+        <a href="epreuve-bts.html">Épreuve BTS</a>
+      </div>
+      <p class="footer-copy">© 2025 — Lucas Noirot | BTS SIO SISR</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Lightbox operations (Supports Image & PDF Viewer)
+    function openLightbox(src, caption, type = 'image') {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const iframe = document.getElementById('lightbox-iframe');
+      const cap = document.getElementById('lightbox-caption');
+      
+      if (!lightbox || !img || !iframe || !cap) return;
+      
+      cap.textContent = caption;
+      
+      if (type === 'pdf') {
+        img.style.display = 'none';
+        iframe.style.display = 'block';
+        iframe.src = src;
+      } else {
+        iframe.style.display = 'none';
+        img.style.display = 'block';
+        img.src = src;
+      }
+      
+      lightbox.classList.add('open');
+    }
+    
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      const iframe = document.getElementById('lightbox-iframe');
+      if (lightbox) {
+        lightbox.classList.remove('open');
+      }
+      if (iframe) {
+        iframe.src = ''; // reset iframe to stop loading/playing in background
+      }
+    }
+  </script>
+</body>
+</html>
