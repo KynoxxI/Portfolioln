@@ -204,7 +204,7 @@
     <section class="section">
       <div class="container">
         
-        <!-- Filter Tabs -->
+        
         <div class="filter-tabs animate-in">
           <button class="filter-tab active" data-filter="all">Tous</button>
           <button class="filter-tab" data-filter="scolaire">En formation (Scolaire)</button>
@@ -212,11 +212,11 @@
           <button class="filter-tab" data-filter="pro2">Milieu Pro (2ème année)</button>
         </div>
 
-        <!-- Projects Grid (Sorted from 2026 to 2024, without numbering) -->
+        
         <div class="projets-grid">
           
-          <!-- ==================== GROUP 2026 ==================== -->
-          <!-- Projet: Masters FOG Project -->
+          
+          
           <div class="projet-card animate-in" data-cat="pro2">
             <div class="projet-header">
               <div class="projet-icon-wrapper">⚙️</div>
@@ -229,7 +229,7 @@
             <p>Préparation d'une image système optimisée pour un service technique de l'établissement. L'enjeu était l'intégration de logiciels métiers volumineux sur des disques de faible capacité. Après nettoyage et optimisation du master pour réduire son poids, le déploiement automatisé a été réalisé sur l'ensemble des postes de la section via le serveur FOG Project.</p>
           </div>
 
-          <!-- Projet: Windows 11 Migration -->
+          
           <div class="projet-card animate-in" data-cat="pro2">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🚀</div>
@@ -242,7 +242,7 @@
             <p>Mise à jour des postes de Windows 10 vers Windows 11. Utilisation de l'utilitaire Flyby11 pour contourner les prérequis matériels (TPM 2.0, processeur) via le processus "Windows Server Setup". Cette méthode a permis d'uniformiser le système d'exploitation sur l'ensemble du parc malgré l'absence de certains composants requis par l'installeur classique.</p>
           </div>
 
-          <!-- Projet: Docker Swarm & HAProxy -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🐳</div>
@@ -255,7 +255,7 @@
             <p>Le but était de faire en sorte qu'une application web reste toujours accessible. J'ai utilisé Docker Swarm pour répartir l'application sur plusieurs serveurs (des conteneurs). J'ai ajouté HAProxy pour diriger les utilisateurs : si un serveur tombe en panne, HAProxy renvoie automatiquement les visiteurs vers un serveur qui fonctionne, sans coupure.</p>
           </div>
 
-          <!-- Projet: VLAN & DMZ -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🔌</div>
@@ -268,7 +268,7 @@
             <p>Ce projet consistait à simuler l'architecture réseau d'une agence. J'ai séparé le réseau en plusieurs VLANs pour que chaque service (comptabilité, technique, etc.) soit isolé des autres. J'ai aussi créé une DMZ pour sécuriser les serveurs accessibles depuis Internet, en les isolant bien du reste du réseau interne.</p>
           </div>
 
-          <!-- Projet: Veeam Backup -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">💾</div>
@@ -282,8 +282,8 @@
           </div>
 
 
-          <!-- ==================== GROUP 2025 ==================== -->
-          <!-- Projet: pfSense Firewall HA -->
+          
+          
           <div class="projet-card animate-in" data-cat="pro1">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🛡️</div>
@@ -296,7 +296,7 @@
             <p>Ce projet consistait à sécuriser une partie de l'infrastructure sur Proxmox. J'ai installé pfSense et configuré des fonctionnalités de redondance (High Availability) pour garantir la continuité du réseau. La mise en place de ce pare-feu a permis de créer un "bac à sable" (sandbox) : un segment réseau isolé permettant d'effectuer des tests et des configurations sans risque pour le reste de l'infrastructure de l'entreprise.</p>
           </div>
 
-          <!-- Projet: Docker & Portainer -->
+          
           <div class="projet-card animate-in" data-cat="pro1">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🚢</div>
@@ -309,7 +309,7 @@
             <p>Ce projet a porté sur l'exploitation de la technologie Docker pour le déploiement de services. L'expérimentation a permis de distinguer techniquement les conteneurs Docker des conteneurs Proxmox (LXC), notamment en mettant en œuvre l'imbrication d'un moteur Docker au sein d'un conteneur Proxmox. L'interface Portainer.io a été utilisée pour gérer les stacks, les images et les volumes, facilitant le déploiement et le test d'une grande variété de solutions (serveurs web, outils cloud, services réseau).</p>
           </div>
 
-          <!-- Projet: GNS3 simulation -->
+          
           <div class="projet-card animate-in" data-cat="pro1">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🕸️</div>
@@ -322,7 +322,7 @@
             <p>Afin de simuler des architectures réseaux complexes, j'ai installé GNS3 directement sur mon serveur Proxmox. Contrairement à Cisco Packet Tracer, GNS3 permet d'intégrer de réelles images de systèmes (appliances) comme pfSense ou des environnements Linux complets. Cette installation a servi de laboratoire d'apprentissage pour construire, configurer et tester des topologies réseaux réalistes avec un contrôle total sur chaque équipement simulé.</p>
           </div>
 
-          <!-- Projet: Proxmox VE -->
+          
           <div class="projet-card animate-in" data-cat="pro1">
             <div class="projet-header">
               <div class="projet-icon-wrapper">☁️</div>
@@ -335,7 +335,7 @@
             <p>Ce projet a consisté à déployer une solution de virtualisation complète, en partant du matériel jusqu'à l'exploitation logicielle. J'ai réalisé l'installation physique du serveur (montage, câblage et raccordement réseau) avant d'installer l'hyperviseur Proxmox VE. Cette installation a permis de découvrir concrètement le fonctionnement et les différences techniques entre les machines virtuelles (VM) et les conteneurs (LXC) directement sur la plateforme.</p>
           </div>
 
-          <!-- Projet: Zabbix network supervision -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">📊</div>
@@ -348,7 +348,7 @@
             <p>J'ai installé et configuré Zabbix pour surveiller le réseau de l'agence "CUB Dortmund". L'objectif était d'avoir une vue en temps réel sur l'état des serveurs et des ordinateurs. Si un équipement tombe en panne ou si le réseau devient trop lent, le système permet de le voir immédiatement pour intervenir rapidement.</p>
           </div>
 
-          <!-- Projet: Active Directory -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">👥</div>
@@ -361,7 +361,7 @@
             <p>Dans ce projet, j'ai travaillé sur l'administration d'un serveur Windows avec Active Directory. J'ai créé des comptes utilisateurs, organisé des groupes et mis en place des stratégies (GPO). Ces règles servaient par exemple à bloquer l'accès à certains dossiers ou à définir des horaires de connexion pour les employés.</p>
           </div>
 
-          <!-- Projet: solicluBsport -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🌐</div>
@@ -374,7 +374,7 @@
             <p>Ce projet consistait à développer un site web complet pour un club de sport fictif nommé solicluBsport. L'objectif principal était de pratiquer les langages HTML, CSS et PHP, tout en apprenant à interagir avec une base de données. Pour le développement, le logiciel Laragon a été utilisé comme environnement de serveur local afin d'héberger le site et de tester les différentes fonctionnalités de gestion des membres et des activités.</p>
           </div>
 
-          <!-- Projet: GLPI & OCS -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🏷️</div>
@@ -387,7 +387,7 @@
             <p>La mise en place de GLPI a permis d'automatiser la gestion du parc informatique. Après une liaison avec l'Active Directory pour l'importation des comptes, le déploiement d'une stratégie de groupe (GPO) a été configuré. Ce système déclenche un scan automatique sur chaque poste du réseau, faisant remonter les configurations matérielles et logicielles directement dans la base de données GLPI sans aucune intervention manuelle.</p>
           </div>
 
-          <!-- Projet: FOG Deployment -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🖥️</div>
@@ -400,7 +400,7 @@
             <p>L'utilisation de la solution FOG Project a permis d'automatiser l'installation d'ordinateurs. Le but était de préparer une machine modèle (une image Windows avec tous les logiciels déjà installés) et de l'envoyer via le réseau sur plusieurs autres postes en même temps. C'est une méthode qui permet de gagner beaucoup de temps lors de l'installation d'un parc informatique.</p>
           </div>
 
-          <!-- Projet: Hugo Profile -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">⚡</div>
@@ -414,8 +414,8 @@
           </div>
 
 
-          <!-- ==================== GROUP 2024 ==================== -->
-          <!-- Projet: JS Clicker -->
+          
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🎮</div>
@@ -428,7 +428,7 @@
             <p>J'ai réalisé un jeu de type "clicker" en JavaScript. Le principe est simple : le score augmente à chaque clic et on passe des niveaux par paliers (niveau 1 à 15 clics, niveau 2 à 30 clics, etc.). Une partie connexion a été ajoutée pour que l'utilisateur puisse s'identifier, ce qui permet de sauvegarder son score et de le retrouver lors de sa prochaine partie.</p>
           </div>
 
-          <!-- Projet: C# application -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">🔑</div>
@@ -441,7 +441,7 @@
             <p>Ce projet consistait à développer une petite application avec une interface visuelle en C# (loginJS-adapte). Le logiciel permet de créer automatiquement un identifiant (login) à partir du nom et du prénom d'une personne. Il y a aussi une sécurité pour le mot de passe : une case change de couleur (rouge, orange ou vert) pour indiquer si le mot de passe est assez fort ou s'il manque des éléments obligatoires.</p>
           </div>
 
-          <!-- Projet: PHP contact form -->
+          
           <div class="projet-card animate-in" data-cat="scolaire">
             <div class="projet-header">
               <div class="projet-icon-wrapper">📬</div>
