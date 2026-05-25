@@ -39,8 +39,9 @@
 
   <main class="page">
 
-    <section class="hero">
+    <section class="hero" style="min-height: 55vh; padding: 3rem 2rem 2.5rem;">
       <div class="hero-container">
+        <div class="hero-badge">BTS SIO — Option SISR</div>
         <h1>Bienvenue sur mon<br/><span>portfolio !</span></h1>
         <p class="hero-sub">
           Ce portfolio retrace mon parcours d'étudiant en BTS SIO option SISR.
@@ -49,6 +50,7 @@
         </p>
         <div class="hero-actions">
           <a href="apropos.html" class="btn btn-primary">Découvrir mon profil →</a>
+          <a href="epreuve-bts.html" class="btn btn-outline">Épreuve BTS</a>
         </div>
       </div>
       <div class="hero-blobs">
@@ -58,37 +60,44 @@
       </div>
     </section>
 
-    <section class="quick-nav-section">
+    <section style="padding: 3.5rem 2rem; background: #fff;">
       <div class="container">
-        <p class="section-desc animate-in" style="text-align: left; max-width: 100%; margin-bottom: 2rem; color: var(--gray-600); font-weight: 500;">
+        <p style="font-size: 0.95rem; color: #4b5563; font-weight: 500; margin-bottom: 2.5rem; border-left: 3px solid #7c3aed; padding-left: 1rem;">
           Retrouvez ici toutes les informations sur mon parcours, mes compétences et mes réalisations.
         </p>
-        
-        <div class="quick-nav-grid">
-          <a href="apropos.html" class="quick-nav-card animate-in">
-            <div class="quick-nav-icon">👤</div>
-            <h3 class="quick-nav-title">Présentation</h3>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem;">
+
+          <a href="apropos.html" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; background:#fff; border:1px solid rgba(124,58,237,0.12); border-top:4px solid #7c3aed; border-radius:16px; padding:2rem 1rem; text-align:center; height:180px; text-decoration:none; color:inherit; box-shadow:0 1px 3px rgba(124,58,237,0.08); transition:all .25s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(124,58,237,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow='0 1px 3px rgba(124,58,237,0.08)'">
+            <span style="font-size:2.5rem;">👤</span>
+            <span style="font-family:'Outfit',sans-serif; font-size:1rem; font-weight:700; color:#111827;">Présentation</span>
           </a>
-          <a href="apropos.html#etudes" class="quick-nav-card animate-in delay-1">
-            <div class="quick-nav-icon">🎓</div>
-            <h3 class="quick-nav-title">Études</h3>
+
+          <a href="apropos.html#etudes" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; background:#fff; border:1px solid rgba(124,58,237,0.12); border-top:4px solid #7c3aed; border-radius:16px; padding:2rem 1rem; text-align:center; height:180px; text-decoration:none; color:inherit; box-shadow:0 1px 3px rgba(124,58,237,0.08); transition:all .25s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(124,58,237,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow='0 1px 3px rgba(124,58,237,0.08)'">
+            <span style="font-size:2.5rem;">🎓</span>
+            <span style="font-family:'Outfit',sans-serif; font-size:1rem; font-weight:700; color:#111827;">Études</span>
           </a>
-          <a href="experiences.html" class="quick-nav-card animate-in delay-2">
-            <div class="quick-nav-icon">💼</div>
-            <h3 class="quick-nav-title">Expérience Pro</h3>
+
+          <a href="experiences.html" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; background:#fff; border:1px solid rgba(124,58,237,0.12); border-top:4px solid #7c3aed; border-radius:16px; padding:2rem 1rem; text-align:center; height:180px; text-decoration:none; color:inherit; box-shadow:0 1px 3px rgba(124,58,237,0.08); transition:all .25s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(124,58,237,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow='0 1px 3px rgba(124,58,237,0.08)'">
+            <span style="font-size:2.5rem;">💼</span>
+            <span style="font-family:'Outfit',sans-serif; font-size:1rem; font-weight:700; color:#111827;">Expérience Pro</span>
           </a>
-          <a href="projets.html" class="quick-nav-card animate-in delay-3">
-            <div class="quick-nav-icon">💻</div>
-            <h3 class="quick-nav-title">Projets Informatiques</h3>
+
+          <a href="projets.html" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; background:#fff; border:1px solid rgba(124,58,237,0.12); border-top:4px solid #7c3aed; border-radius:16px; padding:2rem 1rem; text-align:center; height:180px; text-decoration:none; color:inherit; box-shadow:0 1px 3px rgba(124,58,237,0.08); transition:all .25s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(124,58,237,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow='0 1px 3px rgba(124,58,237,0.08)'">
+            <span style="font-size:2.5rem;">💻</span>
+            <span style="font-family:'Outfit',sans-serif; font-size:1rem; font-weight:700; color:#111827;">Projets Informatiques</span>
           </a>
-          <a href="epreuve-bts.html" class="quick-nav-card animate-in delay-4">
-            <div class="quick-nav-icon">📋</div>
-            <h3 class="quick-nav-title">Épreuve BTS</h3>
+
+          <a href="epreuve-bts.html" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; background:#fff; border:1px solid rgba(124,58,237,0.12); border-top:4px solid #7c3aed; border-radius:16px; padding:2rem 1rem; text-align:center; height:180px; text-decoration:none; color:inherit; box-shadow:0 1px 3px rgba(124,58,237,0.08); transition:all .25s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(124,58,237,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow='0 1px 3px rgba(124,58,237,0.08)'">
+            <span style="font-size:2.5rem;">📋</span>
+            <span style="font-family:'Outfit',sans-serif; font-size:1rem; font-weight:700; color:#111827;">Épreuve BTS</span>
           </a>
-          <a href="epreuve-bts.html#veille" class="quick-nav-card animate-in">
-            <div class="quick-nav-icon">🔍</div>
-            <h3 class="quick-nav-title">Veille Informatique</h3>
+
+          <a href="epreuve-bts.html#veille" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; background:#fff; border:1px solid rgba(124,58,237,0.12); border-top:4px solid #7c3aed; border-radius:16px; padding:2rem 1rem; text-align:center; height:180px; text-decoration:none; color:inherit; box-shadow:0 1px 3px rgba(124,58,237,0.08); transition:all .25s ease;" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 20px 60px rgba(124,58,237,0.2)'" onmouseout="this.style.transform='';this.style.boxShadow='0 1px 3px rgba(124,58,237,0.08)'">
+            <span style="font-size:2.5rem;">🔍</span>
+            <span style="font-family:'Outfit',sans-serif; font-size:1rem; font-weight:700; color:#111827;">Veille Informatique</span>
           </a>
+
         </div>
       </div>
     </section>
