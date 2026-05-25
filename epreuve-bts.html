@@ -550,7 +550,7 @@
 
   <script src="main.js"></script>
   <script>
-    // Lightbox operations (Supports Image & PDF Viewer)
+
     function openLightbox(src, caption, type = 'image') {
       const lightbox = document.getElementById('lightbox');
       const img = document.getElementById('lightbox-img');
@@ -561,14 +561,16 @@
       
       cap.textContent = caption;
       
+      const buster = '?v=' + new Date().getTime();
+      
       if (type === 'pdf') {
         img.style.display = 'none';
         iframe.style.display = 'block';
-        iframe.src = src;
+        iframe.src = src + buster;
       } else {
         iframe.style.display = 'none';
         img.style.display = 'block';
-        img.src = src;
+        img.src = src + buster;
       }
       
       lightbox.classList.add('open');
